@@ -1,0 +1,2 @@
+# discordbot
+Poradnik #1
