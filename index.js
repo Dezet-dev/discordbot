@@ -37,7 +37,23 @@ if(command == "embed"){
     message.channel.send(embed)
 
 }
-});     
+if(command == "infoserwer"){
+    var embed = new Discord.RichEmbed()
+    .addField("Nazwa Serwera:", message.guild.name, true)
+    .addField("Właściciel serwera:", message.guild.owner.user.tag, true)
+    .addField("Data stworzenia serwera:", message.guild.createdAt, false)
+    .addField("Data dołączenia na serwer:", message.guild.joinedAt, false)
+    .addField("Role serwera:", message.guild.roles.map(roles => `${roles.name}`).join(`, `), false)
+    .setColor("GREEN")
+    .setTimestamp()
+    .setFooter(message.member.user.tag, message.member.user.avatarURL)
+    .setAuthor(message.member.user.username, message.member.user.avatarURL)
+    .setThumbnail(message.guild.iconURL)
+    .setImage(message.guild.iconURL)
 
+
+    return message.channel.send(embed)
+}
+});     
 
 bot.login(botconfig.token)
