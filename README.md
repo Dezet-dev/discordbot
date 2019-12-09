@@ -10,3 +10,9 @@ Poradnik #2
 
 Komenda say oraz embed
 
+
+
+Poradnik #3
+
+Komenda infoserwer
+
