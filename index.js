@@ -54,6 +54,29 @@ if(command == "infoserwer"){
 
     return message.channel.send(embed)
 }
+if(command == "propozycja"){
+    var wiadomsc = message.content.slice([prefix.length+10])
+    var embed = new Discord.RichEmbed()
+    .setAuthor(message.member.user.username, message.member.user.avatarURL)
+    .addField("Treść propozycji", wiadomsc, false)
+    .setFooter("Jeśli się zgadzasz kliknij emotkę ✔️ | Jeśli się nie zgadzasz klikniej emotkę ❌")
+
+    var kanal = bot.channels.get("657815752606220288")
+    kanal.send(embed).then(async embedMessage => {
+        await embedMessage.react('657810542043463680')
+        await embedMessage.react('657810551610540044')
+    return
+    })
+}
+if(command == "rzutmonetą"){
+
+    var wynik = (Math.floor(Math.random() * 2) == 0) ? 'Orzeł' : "Reszka"
+    var embed = new Discord.RichEmbed()
+    .setTitle("Wynik losowania:")
+    .setDescription(wynik)
+    .setColor("GREEN")
+    return message.channel.send(embed)
+}
 });     
 
 bot.login(botconfig.token)
