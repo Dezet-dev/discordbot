@@ -16,3 +16,8 @@ Poradnik #3
 
 Komenda infoserwer
 
+Poradnik #4
+
+Komenda propozycja
+
+
